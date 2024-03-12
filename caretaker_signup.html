@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caretaker Signup</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body dir="rtl">
+    <header>
+        <!-- Header content -->
+    </header>
+    <div class="container">
+        <h2>הרשמה עבור מטפלים</h2>
+        <form action="process_caretaker_signup.php" method="POST">
+            <label for="firstname">שם פרטי:</label><br>
+            <input type="text" id="firstname" name="firstname" required><br>
+
+            <label for="lastname">שם משפחה:</label><br>
+            <input type="text" id="lastname" name="lastname" required><br>
+
+            <label for="email">כתובת דוא"ל:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">סיסמה:</label><br>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="languages">שפות:</label><br>
+            <input type="checkbox" id="hebrew" name="languages[]" value="Hebrew">
+            <label for="hebrew">עברית</label><br>
+            <input type="checkbox" id="english" name="languages[]" value="English">
+            <label for="english">אנגלית</label><br>
+            <input type="checkbox" id="german" name="languages[]" value="German">
+            <label for="german">גרמנית</label><br>
+            <input type="checkbox" id="russian" name="languages[]" value="Russian">
+            <label for="russian">רוסית</label><br>
+            <input type="checkbox" id="other" name="languages[]" value="Other">
+            <label for="other">אחר</label><br>
+
+            <label for="availability">זמינות לעבודה:</label><br>
+            <select id="availability" name="availability" required>
+                <option value="all_time">כל הזמן</option>
+                <option value="day_only">רק ביום</option>
+                <option value="night_only">רק בלילה</option>
+                <option value="weekends_only">רק בסופ"ש</option>
+            </select><br>
+
+            <label for="experience">שנות ניסיון בתחום הסיעוד:</label><br>
+            <input type="number" id="experience" name="experience" required><br>
+
+            <label for="phone">מספר טלפון:</label><br>
+            <input type="tel" id="phone" name="phone" required><br>
+
+            <label for="gender">מגדר מטפל מועדף:</label><br>
+            <select id="gender" name="gender" required>
+                <option value="male">זכר</option>
+                <option value="female">נקבה</option>
+                <option value="both">שניהם</option>
+            </select><br>
+
+            <label for="pets">מסתדר עם בעלי חיים?</label>
+            <select id="pets" name="pets" required>
+                <option value="yes">כן</option>
+                <option value="no">לא</option>
+            </select><br>
+
+            <label for="smoking">מסתדר עם מטופלים מעשנים?</label>
+            <select id="smoking" name="smoking" required>
+                <option value="yes">כן</option>
+                <option value="no">לא</option>
+            </select><br>
+
+            <label for="own_smoking">מעשן בעצמך?</label>
+            <select id="own_smoking" name="own_smoking" required>
+                <option value="yes">כן</option>
+                <option value="no">לא</option>
+            </select><br>
+
+            <label for="contact_preference">כיצד תרצה שהמטופל ייצור איתך קשר?</label><br>
+            <select id="contact_preference" name="contact_preference" required>
+                <option value="sms">הודעת טקסט</option>
+                <option value="whatsapp">WhatsApp</option>
+                <option value="phone">שיחת טלפון</option>
+                <option value="email">דוא"ל</option>
+            </select><br>
+
+            <label for="hobbies">תחביבים:</label><br>
+            <textarea id="hobbies" name="hobbies"></textarea><br>
+
+            <label for="skills">כישורים:</label><br>
+            <input type="checkbox" id="cleaning" name="skills[]" value="cleaning">
+            <label for="cleaning">ניקיון</label><br>
+            <input type="checkbox" id="cooking" name="skills[]" value="cooking">
+            <label for="cooking">בישול</label><br>
+            <input type="checkbox" id="diapers" name="skills[]" value="diapers">
+            <label for="diapers">החלפת חיתולים</label><br>
+            <input type="checkbox" id="clothing" name="skills[]" value="clothing">
+            <label for="clothing">הלבשה</label><br>
+            <input type="checkbox" id="liftups" name="skills[]" value="liftups">
+            <label for="liftups">הרמה</label><br>
+            <input type="checkbox" id="baths" name="skills[]" value="baths">
+            <label for="baths">אמבטיה</label><br>
+            <!-- Add more skills as needed -->
+
+            <label for="specific_experience">ניסיון במצבים ספציפיים:</label><br>
+            <textarea id="specific_experience" name="specific_experience"></textarea><br>
+
+            <label for="picture">תמונה:</label><br>
+            <input type="file" id="picture" name="picture" accept="image/*"><br>
+
+            <input type="submit" value="הרשמה">
+        </form>
+        <p>כבר יש לך חשבון? <a href="signup_login_caretaker.html">התחבר כאן</a></p>
+        <p><a href="index.html">חזרה לעמוד הראשי</a></p>
+    </div>
+</body>
+</html>

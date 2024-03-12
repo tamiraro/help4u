@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Signup</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body dir="rtl">
+    <header>
+        <!-- Header content -->
+    </header>
+    <div class="container">
+        <h2>הרשמה עבור מטופלים</h2>
+        <form action="process_patient_signup.php" method="POST">
+            <label for="firstname">שם פרטי:</label><br>
+            <input type="text" id="firstname" name="firstname" required><br>
+
+            <label for="lastname">שם משפחה:</label><br>
+            <input type="text" id="lastname" name="lastname" required><br>
+
+            <label for="email">כתובת דוא"ל:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">סיסמה:</label><br>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="gender">מגדר:</label><br>
+            <select id="gender" name="gender" required>
+                <option value="male">זכר</option>
+                <option value="female">נקבה</option>
+            </select><br>
+
+            <label for="age">גיל:</label><br>
+            <input type="number" id="age" name="age" required><br>
+
+            <label for="city">עיר מגורים:</label><br>
+            <input type="text" id="city" name="city" required><br>
+
+            <label for="languages">שפות:</label><br>
+            <input type="checkbox" id="hebrew" name="languages[]" value="Hebrew">
+            <label for="hebrew">עברית</label><br>
+            <input type="checkbox" id="english" name="languages[]" value="English">
+            <label for="english">אנגלית</label><br>
+            <input type="checkbox" id="german" name="languages[]" value="German">
+            <label for="german">גרמנית</label><br>
+            <input type="checkbox" id="russian" name="languages[]" value="Russian">
+            <label for="russian">רוסית</label><br>
+            <input type="checkbox" id="other" name="languages[]" value="Other">
+            <label for="other">אחר</label><br>
+
+            <label for="family_situation">מצב משפחתי:</label><br>
+            <select id="family_situation" name="family_situation" required>
+                <option value="family">משפחה</option>
+                <option value="couple">זוג</option>
+                <option value="single">יחיד</option>
+            </select><br>
+
+            <label for="living_type">סוג מגורים:</label><br>
+            <select id="living_type" name="living_type" required>
+                <option value="appartment">דירה</option>
+                <option value="house">בית</option>
+                <option value="nursing_home">בית אבות</option>
+            </select><br>
+
+            <label for="phone">מספר טלפון:</label><br>
+            <input type="tel" id="phone" name="phone" required><br>
+
+            <label for="pet">בעל חיים</label><br>
+            <select id="pet" name="pet" required>
+                <option value="dog">כלב</option>
+                <option value="cat">חתול</option>
+                <option value="other">אחר (פרט בהערות)</option>
+                <option value="none">אין</option>
+            </select><br>
+
+            <label for="smoking">מסתדר עם מטפלים מעשנים?</label>
+            <select id="smoking" name="smoking" required>
+                <option value="yes">כן</option>
+                <option value="no">לא</option>
+            </select><br>
+
+            <label for="own_smoking">מעשן בעצמך?</label>
+            <select id="own_smoking" name="own_smoking" required>
+                <option value="yes">כן</option>
+                <option value="no">לא</option>
+            </select><br>
+
+            <label for="comments">הערות:</label><br>
+            <textarea id="comments" name="comments"></textarea><br>
+
+            <input type="submit" value="הרשמה">
+        </form>
+        <p>כבר יש לך חשבון? <a href="signup_login_patient.html">התחבר כאן</a></p>
+        <p><a href="index.html">חזרה לעמוד הראשי</a></p>
+    </div>
+</body>
+</html>
