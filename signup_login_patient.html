@@ -7,6 +7,12 @@
     <style>
         /* Add your CSS styles here */
     </style>
+    <script>
+        function redirectToPatientMatchesPage() {
+            // Redirect the user to the matches page
+            window.location.href = "patient_matches_page.html";
+        }
+    </script>
 </head>
 <body dir="rtl">
     <header>
@@ -19,7 +25,7 @@
             <input type="email" id="email" name="email" required>
             <label for="password">סיסמה:</label>
             <input type="password" id="password" name="password" required>
-            <input type="submit" value="התחברות">
+            <input type="submit" value="התחברות" onclick="redirectToPatientMatchesPage()">
         </form>
         <p>אין לך חשבון? <a href="patient_signup.html">הרשם כאן</a></p>
         <p><a href="index.html">חזרה לעמוד הראשי</a></p>
