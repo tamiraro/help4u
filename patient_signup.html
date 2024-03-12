@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he">
 <head>
     <meta charset="UTF-8">
@@ -51,6 +51,14 @@
             <input type="checkbox" id="other" name="languages[]" value="Other">
             <label for="other">אחר</label><br>
 
+            <label for="availability">דרישת זמינות לעבודה מהמטפל:</label><br>
+            <select id="availability" name="availability" required>
+                <option value="all_time">כל הזמן</option>
+                <option value="day_only">רק ביום</option>
+                <option value="night_only">רק בלילה</option>
+                <option value="weekends_only">רק בסופ"ש</option>
+            </select><br>
+
             <label for="family_situation">מצב משפחתי:</label><br>
             <select id="family_situation" name="family_situation" required>
                 <option value="family">משפחה</option>
@@ -87,6 +95,20 @@
                 <option value="yes">כן</option>
                 <option value="no">לא</option>
             </select><br>
+
+            <label for="skills">כישורים נדרשים מהמטפל:</label><br>
+            <input type="checkbox" id="cleaning" name="skills[]" value="cleaning">
+            <label for="cleaning">ניקיון</label><br>
+            <input type="checkbox" id="cooking" name="skills[]" value="cooking">
+            <label for="cooking">בישול</label><br>
+            <input type="checkbox" id="diapers" name="skills[]" value="diapers">
+            <label for="diapers">החלפת חיתולים</label><br>
+            <input type="checkbox" id="clothing" name="skills[]" value="clothing">
+            <label for="clothing">הלבשה</label><br>
+            <input type="checkbox" id="liftups" name="skills[]" value="liftups">
+            <label for="liftups">הרמה</label><br>
+            <input type="checkbox" id="baths" name="skills[]" value="baths">
+            <label for="baths">אמבטיה</label><br>
 
             <label for="comments">הערות:</label><br>
             <textarea id="comments" name="comments"></textarea><br>
