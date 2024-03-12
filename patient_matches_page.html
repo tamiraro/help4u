@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caretaker Matches for Patients</title>
+</head>
+<body dir="rtl">
+    <h2>ברוך הבא, כאן תוכל לראות את התאמותיך:</h2>
+
+    <!-- Button to toggle advanced search visibility -->
+    <button id="toggle-advanced-search" onclick="toggleAdvancedSearch()">חיפוש מתקדם</button>
+
+    <!-- Advanced Search Form (Initially hidden) -->
+    <div id="advanced-search" style="display: none;">
+        <h3>חיפוש מתקדם:</h3>
+        <form id="advanced-search-form">
+
+            <label for="languages">שפות:</label><br>
+            <input type="checkbox" id="hebrew" name="languages[]" value="Hebrew">
+            <label for="hebrew">עברית</label><br>
+            <input type="checkbox" id="english" name="languages[]" value="English">
+            <label for="english">אנגלית</label><br>
+            <input type="checkbox" id="german" name="languages[]" value="German">
+            <label for="german">גרמנית</label><br>
+            <input type="checkbox" id="russian" name="languages[]" value="Russian">
+            <label for="russian">רוסית</label><br>
+            <input type="checkbox" id="other" name="languages[]" value="Other">
+            <label for="other">אחר</label><br>
+
+            <label for="availability">זמינות לעבודה:</label><br>
+            <select id="availability" name="availability">
+                <option value="all_time">כל הזמן</option>
+                <option value="day_only">רק ביום</option>
+                <option value="night_only">רק בלילה</option>
+                <option value="weekends_only">רק בסופ"ש</option>
+            </select><br>
+
+            <label for="pets">האם המטפל מסתדר עם בעלי חיים?</label>
+            <select id="pets" name="pets">
+                <option value="yes">כן</option>
+                <option value="no">לא</option>
+            </select><br>
+
+            <label for="smoking">האם המטפל מסתדר עם מטופלים מעשנים?</label>
+            <select id="smoking" name="smoking">
+                <option value="yes">כן</option>
+                <option value="no">לא</option>
+            </select><br>
+
+            <label for="own_smoking">האם המטפל מעשן ?</label>
+            <select id="own_smoking" name="own_smoking">
+                <option value="yes">כן</option>
+                <option value="no">לא</option>
+            </select><br>
+
+            <label for="skills">כישורים דרושים:</label><br>
+            <input type="checkbox" id="cleaning" name="skills[]" value="cleaning">
+            <label for="cleaning">ניקיון</label><br>
+            <input type="checkbox" id="cooking" name="skills[]" value="cooking">
+            <label for="cooking">בישול</label><br>
+            <input type="checkbox" id="diapers" name="skills[]" value="diapers">
+            <label for="diapers">החלפת חיתולים</label><br>
+            <input type="checkbox" id="clothing" name="skills[]" value="clothing">
+            <label for="clothing">הלבשה</label><br>
+            <input type="checkbox" id="liftups" name="skills[]" value="liftups">
+            <label for="liftups">הרמה</label><br>
+            <input type="checkbox" id="baths" name="skills[]" value="baths">
+            <label for="baths">אמבטיה</label><br>
+            <!-- Add more skills as needed -->
+
+            <label for="specific_experience">ניסיון במצבים ספציפיים:</label><br>
+            <textarea id="specific_experience" name="specific_experience"></textarea><br>
+
+        </form>
+    </div>
+
+    <div id="matches">
+        <!-- Display matched caretakers here -->
+        <!-- Placeholder content for demonstration purposes -->
+        <h3>תוצאות התאמה:</h3>
+        <p>אין תוצאות מתאימות כרגע.</p>
+    </div>
+
+    <script>
+        // Function to toggle advanced search visibility
+        function toggleAdvancedSearch() {
+            var advancedSearchDiv = document.getElementById("advanced-search");
+            var toggleButton = document.getElementById("toggle-advanced-search");
+
+            if (advancedSearchDiv.style.display === "none") {
+                advancedSearchDiv.style.display = "block";
+                toggleButton.textContent = "סגור חיפוש מתקדם";
+            } else {
+                advancedSearchDiv.style.display = "none";
+                toggleButton.textContent = "חיפוש מתקדם";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Matches for Caretakers</title>
+    <style>
+        #advancedSearchForm {
+            display: none;
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <h2>ברוך הבא, כאן תוכל לראות את התאמותיך:</h2>
+
+    <button id="toggleAdvancedSearch">חיפוש מתקדם</button>
+
+    <form id="advancedSearchForm">
+        <h3>חיפוש מתקדם:</h3>
+        <label for="gender">מגדר:</label>
+        <select id="gender" name="gender">
+            <option value="male">זכר</option>
+            <option value="female">נקבה</option>
+        </select><br>
+
+        <label for="age">גיל:</label>
+        <input type="number" id="age" name="age"><br>
+
+        <label for="city">עיר מגורים:</label>
+        <input type="text" id="city" name="city"><br>
+
+        <label for="languages">שפות:</label><br>
+        <input type="checkbox" id="hebrew" name="languages[]" value="Hebrew">
+        <label for="hebrew">עברית</label><br>
+        <input type="checkbox" id="english" name="languages[]" value="English">
+        <label for="english">אנגלית</label><br>
+        <input type="checkbox" id="german" name="languages[]" value="German">
+        <label for="german">גרמנית</label><br>
+        <input type="checkbox" id="russian" name="languages[]" value="Russian">
+        <label for="russian">רוסית</label><br>
+        <input type="checkbox" id="other" name="languages[]" value="Other">
+        <label for="other">אחר</label><br>
+
+        <label for="availability">דרישת זמינות לעבודה:</label>
+        <select id="availability" name="availability">
+            <option value="all_time">כל הזמן</option>
+            <option value="day_only">רק ביום</option>
+            <option value="night_only">רק בלילה</option>
+            <option value="weekends_only">רק בסופ"ש</option>
+        </select><br>
+
+        <label for="family_situation">מצב משפחתי:</label>
+        <select id="family_situation" name="family_situation">
+            <option value="family">משפחה</option>
+            <option value="couple">זוג</option>
+            <option value="single">יחיד</option>
+        </select><br>
+
+        <label for="living_type">סוג מגורים:</label>
+        <select id="living_type" name="living_type">
+            <option value="appartment">דירה</option>
+            <option value="house">בית</option>
+            <option value="nursing_home">בית אבות</option>
+        </select><br>
+
+        <label for="pet">בעל חיים:</label>
+        <select id="pet" name="pet">
+            <option value="yes">יש</option>
+            <option value="no">אין</option>
+        </select><br>
+
+        <label for="smoking">האם המטופל מסתדר עם מטפלים מעשנים?</label>
+        <select id="smoking" name="smoking">
+            <option value="yes">כן</option>
+            <option value="no">לא</option>
+        </select><br>
+
+        <label for="own_smoking">האם המטופל מעשן?</label>
+        <select id="own_smoking" name="own_smoking">
+            <option value="yes">כן</option>
+            <option value="no">לא</option>
+        </select><br>
+
+        <label for="skills">כישורים נדרשים:</label><br>
+        <input type="checkbox" id="cleaning" name="skills[]" value="cleaning">
+        <label for="cleaning">ניקיון</label><br>
+        <input type="checkbox" id="cooking" name="skills[]" value="cooking">
+        <label for="cooking">בישול</label><br>
+        <input type="checkbox" id="diapers" name="skills[]" value="diapers">
+        <label for="diapers">החלפת חיתולים</label><br>
+        <input type="checkbox" id="clothing" name="skills[]" value="clothing">
+        <label for="clothing">הלבשה</label><br>
+        <input type="checkbox" id="liftups" name="skills[]" value="liftups">
+        <label for="liftups">הרמה</label><br>
+        <input type="checkbox" id="baths" name="skills[]" value="baths">
+        <label for="baths">אמבטיה</label><br>
+
+        <label for="comments">הערות:</label><br>
+        <textarea id="comments" name="comments"></textarea><br>
+
+        <input type="submit" value="חיפוש">
+    </form>
+
+    <div id="matches">
+        <!-- Display matched patients here -->
+        <!-- Placeholder content for demonstration purposes -->
+        <h3>תוצאות החיפוש:</h3>
+        <p>אין תוצאות מתאימות כרגע.</p>
+    </div>
+
+    <script>
+        // JavaScript code for handling form submission and displaying search results
+        document.getElementById("toggleAdvancedSearch").addEventListener("click", function () {
+            var advancedSearchForm = document.getElementById("advancedSearchForm");
+            if (advancedSearchForm.style.display === "none") {
+                advancedSearchForm.style.display = "block";
+            } else {
+                advancedSearchForm.style.display = "none";
+            }
+        });
+
+        document.getElementById("advancedSearchForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            // Fetch and display search results (for demonstration purposes, add actual implementation when you have a database)
+            displaySearchResults();
+        });
+
+        function displaySearchResults() {
+            // Clear previous search results
+            document.getElementById("matches").innerHTML = "";
+
+            // Fetch and display search results (for demonstration purposes, add actual implementation when you have a database)
+            // You can use AJAX to fetch data from a server or use JavaScript arrays for demonstration
+            var matchedPatients = [
+                { firstName: "Patient", lastName: "One", email: "patient1@example.com", password: "password1", gender: "male", age: 30, city: "Tel Aviv", languages: ["Hebrew", "English"], availability: "all_time", family_situation: "family", living_type: "appartment", phone: "1234567890", pet: "dog", smoking: "yes", own_smoking: "no", skills: ["cleaning", "cooking"], comments: "Some comments about patient 1." },
+                { firstName: "Patient", lastName: "Two", email: "patient2@example.com", password: "password2", gender: "female", age: 25, city: "Jerusalem", languages: ["Hebrew"], availability: "day_only", family_situation: "single", living_type: "house", phone: "0987654321", pet: "cat", smoking: "no", own_smoking: "yes", skills: ["cleaning"], comments: "Some comments about patient 2." },
+                // Add more dummy patient data here
+            ];
+
+            if (matchedPatients.length > 0) {
+                var matchesDiv = document.getElementById("matches");
+                var resultsHeader = document.createElement("h3");
+                resultsHeader.textContent = "תוצאות החיפוש:";
+                matchesDiv.appendChild(resultsHeader);
+
+                // Display matched patients
+                matchedPatients.forEach(function (patient) {
+                    var patientInfo = document.createElement("p");
+                    patientInfo.textContent = "שם: " + patient.firstName + " " + patient.lastName + ", כתובת דוא\"ל: " + patient.email + ", גיל: " + patient.age + ", עיר מגורים: " + patient.city;
+                    matchesDiv.appendChild(patientInfo);
+                });
+            } else {
+                // Display message if no matches found
+                var noResultsMessage = document.createElement("p");
+                noResultsMessage.textContent = "אין תוצאות מתאימות כרגע.";
+                document.getElementById("matches").appendChild(noResultsMessage);
+            }
+        }
+    </script>
+</body>
+</html>
