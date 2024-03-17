@@ -1,104 +1,104 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="he">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matches for Caretakers</title>
     <style>
-        #advancedSearchForm {
-            display: none;
+        body {
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
 <body dir="rtl">
     <h2>ברוך הבא, כאן תוכל לראות את התאמותיך:</h2>
 
-    <button id="toggleAdvancedSearch">חיפוש מתקדם</button>
+    <button id="toggle-advanced-search" onclick="toggleAdvancedSearch()">חיפוש מתקדם</button>
 
-    <form id="advancedSearchForm">
-        <h3>חיפוש מתקדם:</h3>
-        <label for="gender">מגדר:</label>
-        <select id="gender" name="gender">
-            <option value="male">זכר</option>
-            <option value="female">נקבה</option>
-        </select><br>
+    <div id="advanced-search" style="display: none;">
+        <form id="advancedSearchForm">
+            <h3>חיפוש מתקדם:</h3>
+            <label for="gender">מגדר:</label>
+            <select id="gender" name="gender">
+                <option value="male">זכר</option>
+                <option value="female">נקבה</option>
+            </select><br>
 
-        <label for="age">גיל:</label>
-        <input type="number" id="age" name="age"><br>
+            <label for="age">גיל:</label>
+            <input type="number" id="age" name="age"><br>
 
-        <label for="city">עיר מגורים:</label>
-        <input type="text" id="city" name="city"><br>
+            <label for="city">עיר מגורים:</label>
+            <input type="text" id="city" name="city"><br>
 
-        <label for="languages">שפות:</label><br>
-        <input type="checkbox" id="hebrew" name="languages[]" value="Hebrew">
-        <label for="hebrew">עברית</label><br>
-        <input type="checkbox" id="english" name="languages[]" value="English">
-        <label for="english">אנגלית</label><br>
-        <input type="checkbox" id="german" name="languages[]" value="German">
-        <label for="german">גרמנית</label><br>
-        <input type="checkbox" id="russian" name="languages[]" value="Russian">
-        <label for="russian">רוסית</label><br>
-        <input type="checkbox" id="other" name="languages[]" value="Other">
-        <label for="other">אחר</label><br>
+            <label for="languages">שפות:</label><br>
+            <input type="checkbox" id="hebrew" name="languages[]" value="Hebrew">
+            <label for="hebrew">עברית</label><br>
+            <input type="checkbox" id="english" name="languages[]" value="English">
+            <label for="english">אנגלית</label><br>
+            <input type="checkbox" id="german" name="languages[]" value="German">
+            <label for="german">גרמנית</label><br>
+            <input type="checkbox" id="russian" name="languages[]" value="Russian">
+            <label for="russian">רוסית</label><br>
+            <input type="checkbox" id="other" name="languages[]" value="Other">
+            <label for="other">אחר</label><br>
 
-        <label for="availability">דרישת זמינות לעבודה:</label>
-        <select id="availability" name="availability">
-            <option value="all_time">כל הזמן</option>
-            <option value="day_only">רק ביום</option>
-            <option value="night_only">רק בלילה</option>
-            <option value="weekends_only">רק בסופ"ש</option>
-        </select><br>
+            <label for="availability">דרישת זמינות לעבודה:</label>
+            <select id="availability" name="availability">
+                <option value="all_time">כל הזמן</option>
+                <option value="day_only">רק ביום</option>
+                <option value="night_only">רק בלילה</option>
+                <option value="weekends_only">רק בסופ"ש</option>
+            </select><br>
 
-        <label for="family_situation">מצב משפחתי:</label>
-        <select id="family_situation" name="family_situation">
-            <option value="family">משפחה</option>
-            <option value="couple">זוג</option>
-            <option value="single">יחיד</option>
-        </select><br>
+            <label for="family_situation">מצב משפחתי:</label>
+            <select id="family_situation" name="family_situation">
+                <option value="family">משפחה</option>
+                <option value="couple">זוג</option>
+                <option value="single">יחיד</option>
+            </select><br>
 
-        <label for="living_type">סוג מגורים:</label>
-        <select id="living_type" name="living_type">
-            <option value="appartment">דירה</option>
-            <option value="house">בית</option>
-            <option value="nursing_home">בית אבות</option>
-        </select><br>
+            <label for="living_type">סוג מגורים:</label>
+            <select id="living_type" name="living_type">
+                <option value="appartment">דירה</option>
+                <option value="house">בית</option>
+                <option value="nursing_home">בית אבות</option>
+            </select><br>
 
-        <label for="pet">בעל חיים:</label>
-        <select id="pet" name="pet">
-            <option value="yes">יש</option>
-            <option value="no">אין</option>
-        </select><br>
+            <label for="pet">בעל חיים:</label>
+            <select id="pet" name="pet">
+                <option value="yes">יש</option>
+                <option value="no">אין</option>
+            </select><br>
 
-        <label for="smoking">האם המטופל מסתדר עם מטפלים מעשנים?</label>
-        <select id="smoking" name="smoking">
-            <option value="yes">כן</option>
-            <option value="no">לא</option>
-        </select><br>
+            <label for="smoking">האם המטופל מסתדר עם מטפלים מעשנים?</label>
+            <select id="smoking" name="smoking">
+                <option value="yes">כן</option>
+                <option value="no">לא</option>
+            </select><br>
 
-        <label for="own_smoking">האם המטופל מעשן?</label>
-        <select id="own_smoking" name="own_smoking">
-            <option value="yes">כן</option>
-            <option value="no">לא</option>
-        </select><br>
+            <label for="own_smoking">האם המטופל מעשן?</label>
+            <select id="own_smoking" name="own_smoking">
+                <option value="yes">כן</option>
+                <option value="no">לא</option>
+            </select><br>
 
-        <label for="skills">כישורים נדרשים:</label><br>
-        <input type="checkbox" id="cleaning" name="skills[]" value="cleaning">
-        <label for="cleaning">ניקיון</label><br>
-        <input type="checkbox" id="cooking" name="skills[]" value="cooking">
-        <label for="cooking">בישול</label><br>
-        <input type="checkbox" id="diapers" name="skills[]" value="diapers">
-        <label for="diapers">החלפת חיתולים</label><br>
-        <input type="checkbox" id="clothing" name="skills[]" value="clothing">
-        <label for="clothing">הלבשה</label><br>
-        <input type="checkbox" id="liftups" name="skills[]" value="liftups">
-        <label for="liftups">הרמה</label><br>
-        <input type="checkbox" id="baths" name="skills[]" value="baths">
-        <label for="baths">אמבטיה</label><br>
+            <label for="skills">כישורים נדרשים:</label><br>
+            <input type="checkbox" id="cleaning" name="skills[]" value="cleaning">
+            <label for="cleaning">ניקיון</label><br>
+            <input type="checkbox" id="cooking" name="skills[]" value="cooking">
+            <label for="cooking">בישול</label><br>
+            <input type="checkbox" id="diapers" name="skills[]" value="diapers">
+            <label for="diapers">החלפת חיתולים</label><br>
+            <input type="checkbox" id="clothing" name="skills[]" value="clothing">
+            <label for="clothing">הלבשה</label><br>
+            <input type="checkbox" id="liftups" name="skills[]" value="liftups">
+            <label for="liftups">הרמה</label><br>
+            <input type="checkbox" id="baths" name="skills[]" value="baths">
+            <label for="baths">אמבטיה</label><br>
 
-        <label for="comments">הערות:</label><br>
-        <textarea id="comments" name="comments"></textarea><br>
-
-        <input type="submit" value="חיפוש">
-    </form>
+            <input type="submit" value="חיפוש">
+        </form>
+    </div>
 
     <div id="matches">
         <!-- Display matched patients here -->
@@ -124,6 +124,19 @@
             // Fetch and display search results (for demonstration purposes, add actual implementation when you have a database)
             displaySearchResults();
         });
+
+        function toggleAdvancedSearch() {
+            var advancedSearchDiv = document.getElementById("advanced-search");
+            var toggleButton = document.getElementById("toggle-advanced-search");
+
+            if (advancedSearchDiv.style.display === "none") {
+                advancedSearchDiv.style.display = "block";
+                toggleButton.textContent = "סגור חיפוש מתקדם";
+            } else {
+                advancedSearchDiv.style.display = "none";
+                toggleButton.textContent = "חיפוש מתקדם";
+            }
+        }
 
         function displaySearchResults() {
             // Clear previous search results
