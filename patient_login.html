@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Signup/Login</title>
+    <title>Patient Login</title>
     <style>
-        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
     </style>
     <script>
         function redirectToPatientMatchesPage() {
@@ -19,7 +21,7 @@
         <!-- Header content -->
     </header>
     <div class="container">
-        <h2>הרשמה/התחברות עבור מטופלים</h2>
+        <h2>כניסה עבור מטופלים</h2>
         <form action="process_patient_signup_login.php" method="POST">
             <label for="email">כתובת דוא"ל:</label>
             <input type="email" id="email" name="email" required>
