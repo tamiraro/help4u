@@ -1,12 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caretaker Signup</title>
-    <style>
-        /* Add your CSS styles here */
-    </style>
+    <link rel="stylesheet" href="caretaker_signup_style.css">
 </head>
 <body dir="rtl">
     <header>
@@ -14,7 +12,7 @@
     </header>
     <div class="container">
         <h2>הרשמה עבור מטפלים</h2>
-        <form action="process_caretaker_signup.php" method="POST">
+        <form action="@Url.Action(" Signup", "CaretakerController" )" method="POST">
             <label for="firstname">שם פרטי:</label><br>
             <input type="text" id="firstname" name="firstname" required><br>
 
@@ -28,15 +26,15 @@
             <input type="password" id="password" name="password" required><br>
 
             <label for="languages">שפות:</label><br>
-            <input type="checkbox" id="hebrew" name="languages[]" value="Hebrew">
+            <input type="checkbox" id="hebrew" name="languages" value="Hebrew">
             <label for="hebrew">עברית</label><br>
-            <input type="checkbox" id="english" name="languages[]" value="English">
+            <input type="checkbox" id="english" name="languages" value="English">
             <label for="english">אנגלית</label><br>
-            <input type="checkbox" id="german" name="languages[]" value="German">
+            <input type="checkbox" id="german" name="languages" value="German">
             <label for="german">גרמנית</label><br>
-            <input type="checkbox" id="russian" name="languages[]" value="Russian">
+            <input type="checkbox" id="russian" name="languages" value="Russian">
             <label for="russian">רוסית</label><br>
-            <input type="checkbox" id="other" name="languages[]" value="Other">
+            <input type="checkbox" id="other" name="languages" value="Other">
             <label for="other">אחר</label><br>
 
             <label for="availability">זמינות לעבודה:</label><br>
@@ -45,6 +43,7 @@
                 <option value="day_only">רק ביום</option>
                 <option value="night_only">רק בלילה</option>
                 <option value="weekends_only">רק בסופ"ש</option>
+                <option value="certain_days">מספר ימים בשבוע (פרט בהערות):</option>
             </select><br>
 
             <label for="experience">שנות ניסיון בתחום הסיעוד:</label><br>
@@ -90,29 +89,29 @@
             <textarea id="hobbies" name="hobbies"></textarea><br>
 
             <label for="skills">כישורים:</label><br>
-            <input type="checkbox" id="cleaning" name="skills[]" value="cleaning">
+            <input type="checkbox" id="cleaning" name="skills" value="cleaning">
             <label for="cleaning">ניקיון</label><br>
-            <input type="checkbox" id="cooking" name="skills[]" value="cooking">
+            <input type="checkbox" id="cooking" name="skills" value="cooking">
             <label for="cooking">בישול</label><br>
-            <input type="checkbox" id="diapers" name="skills[]" value="diapers">
+            <input type="checkbox" id="diapers" name="skills" value="diapers">
             <label for="diapers">החלפת חיתולים</label><br>
-            <input type="checkbox" id="clothing" name="skills[]" value="clothing">
+            <input type="checkbox" id="clothing" name="skills" value="clothing">
             <label for="clothing">הלבשה</label><br>
-            <input type="checkbox" id="liftups" name="skills[]" value="liftups">
+            <input type="checkbox" id="liftups" name="skills" value="liftups">
             <label for="liftups">הרמה</label><br>
-            <input type="checkbox" id="baths" name="skills[]" value="baths">
+            <input type="checkbox" id="baths" name="skills" value="baths">
             <label for="baths">אמבטיה</label><br>
             <!-- Add more skills as needed -->
 
             <label for="specific_experience">ניסיון במצבים ספציפיים:</label><br>
             <textarea id="specific_experience" name="specific_experience"></textarea><br>
 
-            <label for="picture">תמונה:</label><br>
-            <input type="file" id="picture" name="picture" accept="image/*"><br>
+            <label for="comments">הערות:</label><br>
+            <textarea id="comments" name="comments"></textarea><br>
 
             <input type="submit" value="הרשמה">
         </form>
-        <p>כבר יש לך חשבון? <a href="signup_login_caretaker.html">התחבר כאן</a></p>
+        <p>כבר יש לך חשבון? <a href="caretaker_login.html">התחבר כאן</a></p>
         <p><a href="index.html">חזרה לעמוד הראשי</a></p>
     </div>
 </body>
